@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------------------------------
 -- Title: LuaTwitter.
 -- Description: Lua client for Twitter API (visit http://apiwiki.twitter.com/ for API details).
--- Version: 0.1e
--- Author: Kamil Kapron (kkapron@gmail.com).
+-- Version: 0.1e-k1
+-- Author: Kamil Kapron (kkapron@gmail.com). Modified by Stuart P. Bentley (stuart@testtrack4.com).
 -- Creation date: May 12-14, 2009.
--- Last update: July 27, 2009.
+-- Last update: September 16, 2009.
 --
 -- Legal: Copyright (C) 2009 Kamil Kapron.
 --
@@ -516,7 +516,7 @@ end
 -- @param in_reply_to_status_id Optional. The ID of an existing status that the update is in reply to
 -- @return table New status or error
 function TwitterClient:UpdateStatus( status, in_reply_to_status_id )
-	return self:MakeQuery( "update_status", {status = url_encode(status), in_reply_to_status_id = in_reply_to_status_id} )
+	return self:MakeQuery( "update_status", {status = status, in_reply_to_status_id = in_reply_to_status_id} )
 end
 
 --- Destroys the status specified by the required ID parameter. The authenticating user must be the author of the specified status.
